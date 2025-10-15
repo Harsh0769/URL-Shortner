@@ -87,7 +87,11 @@ function Shortener() {
                 <tbody>
                     {urls.map((item, index) => (
                         <tr key={index}>
-                            <td data-label="Original URL" className="url-name">{item.redirectURL}</td>
+                            <td data-label="Original URL" className="url-name"
+                                title={item.redirectURL}
+                            >{item.redirectURL.length > 30
+                                ? item.redirectURL.substring(0, 20) + "...." : item.redirectURL
+                                }</td>
                             <td data-label="Short URL">
                                 <a className="Short-link" href={`https://url-shortner-pr9n.onrender.com/${item.shortId}`} target="_blank">
                                     {`https://url-shortner-pr9n.onrender.com/${item.shortId}`}
