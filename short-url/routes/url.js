@@ -1,9 +1,23 @@
-const express = require('express');
-const router = express.Router();
-const  {handleGenerateNewShortUrl , handleGetAnalytics} = require('../controllers/url');
+import express from 'express';
+import { handleGenerateNewShortUrl, handleGetAnalytics , handleShortId } from '../controllers/url.js';
+import URL from "../models/url.js";
 
-router.post("/" , handleGenerateNewShortUrl)
+const router = express.Router();
+
+
+router.get("/", async (req, res) => {
+    try {
+        const urls = await URL.find({});
+        return res.json(urls);
+    } catch (error) {
+        return res.status(500).json({ error: "Failed to fetch URLs" });
+    }
+});
+
+router.post("/", handleGenerateNewShortUrl)
+
+router.get("/:shortId" , handleShortId)
 
 router.get("/analytics/:shortId" , handleGetAnalytics)
 
-module.exports = router;
+export default router;

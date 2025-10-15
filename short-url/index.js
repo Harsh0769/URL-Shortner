@@ -1,33 +1,34 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const URL = require("./models/url")
+import URL from "../short-url/models/url.js";
+import cors from "cors";
+import dotenv from 'dotenv';
+import path from 'path';
+dotenv.config();
 
-const connectToMongoDB = require("./connect");
-const urlRoute = require("./routes/url");
-const PORT = 8001;
+import connectToMongoDB from "../short-url/connect.js";
+import urlRoute from "../short-url/routes/url.js";
+const PORT = process.env.PORT;
+
+connectToMongoDB(process.env.MONOGO_URI ||  "mongodb://localhost:27017/short-url")
+    .then(() => { console.log("Connected to MongoDB") })
+    .catch((err) => { console.error("Failed to connect to MongoDB", err) });
+
+const __dirname = path.resolve()
 
 app.use(express.json());
-app.use("/url" , urlRoute);
+app.use(cors());
 
-app.get("/:shortId" , async(req, res) => {
-    const shortId = req.params.shortId;
-    const entry = await URL.findOneAndUpdate(
-        {
-            shortId , 
-        } , {
-            $push: {
-                visitHistory: {
-                    timestamp: Date.now()
-                },
-            },       
-    }
-); 
-    res.redirect(entry.redirectURL);
-})
 
-connectToMongoDB("mongodb://localhost:27017/short-url")
-.then(console.log("Connected to MongoDB"));
+app.use("/url", urlRoute);
+app.get("/:shortId", urlRoute);
+
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.get("*" , (_, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend" , "dist" ,"index.html"));
+});
+
 
 app.listen(PORT , () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(process.env.BASE_URL || `http://localhost:${PORT}`);
 })

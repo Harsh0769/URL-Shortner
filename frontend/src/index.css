@@ -1,0 +1,152 @@
+:root {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow';
+  line-height: 2;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgb(0, 0, 0);
+  background: #8BC6EC;
+background: linear-gradient(90deg, rgba(139, 198, 236, 1) 0%, rgba(155, 160, 222, 1) 100%);
+}
+
+a {
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 300px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: solid 2px rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.url-name{
+  color: rgb(0, 0, 0);
+}
+
+button:hover {
+  background-color: rgb(0, 0, 0);
+  transition: all 0.2s ease;
+  color: white;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.gen-btn{
+  margin-left: 10px;
+  padding: 8px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+}
+
+.gen-btn :hover{
+  background-color: black;
+  color: white;
+  transition: ease-in-out 0.ms;
+}
+
+.Short-link{
+ color: rgb(0, 0, 0);
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+
+.Short-link:active{
+  color: black;
+}
+
+.Short-link:hover{
+  color: #8d8d8d;
+}
+
+.table {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #d1e1ff;
+  color: rgb(0, 0, 0);
+  border: solid 1px black;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+  /* border-radius: 10px;  */
+}
+
+.url-input{
+  width : "300px";
+  background-color: white;
+  border-radius:5px ;
+  border: none;
+  color: black;
+  padding: 10px 50px;
+}
+
+
+@media (max-width: 600px) {
+
+  table,
+  thead,
+  tbody,
+  th{
+    display: block;
+    width: 90%;
+    height: 90%;
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  thead {
+    display: none;
+    /* Hide table header */
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}
