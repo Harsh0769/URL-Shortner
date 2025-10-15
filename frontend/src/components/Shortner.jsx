@@ -8,7 +8,7 @@ function Shortener() {
 
 
     useEffect(() => {
-        axios.get("http://localhost:8001/url")
+        axios.get("https://url-shortner-pr9n.onrender.com/url")
             .then(res => setUrls(res.data))
             .catch(err => console.log(err));
     }, []);
@@ -20,8 +20,8 @@ function Shortener() {
             return;
         }
         try {
-            const res = await axios.post("http://localhost:8001/url", { url });
-            setGeneratedUrl(`http://localhost:8001/${res.data.id}`);
+            const res = await axios.post("https://url-shortner-pr9n.onrender.com/url", { url });
+            setGeneratedUrl(`https://url-shortner-pr9n.onrender.com/${res.data.id}`);
         } catch {
             alert("Please Enter the Correct URL");
         }
@@ -29,7 +29,7 @@ function Shortener() {
 
     const fetchAnalytics = async (shortId) => {
         try {
-            const res = await axios.get(`http://localhost:8001/url/analytics/${shortId}`);
+            const res = await axios.get(`https://url-shortner-pr9n.onrender.com/url/analytics/${shortId}`);
 
             const totalClicks = res.data.totalClicks;
             const analytics = res.data.analytics;
@@ -89,8 +89,8 @@ function Shortener() {
                         <tr key={index}>
                             <td data-label="Original URL" className="url-name">{item.redirectURL}</td>
                             <td data-label="Short URL">
-                                <a className="Short-link" href={`http://localhost:8001/${item.shortId}`} target="_blank">
-                                    {`http://localhost:8001/${item.shortId}`}
+                                <a className="Short-link" href={`https://url-shortner-pr9n.onrender.com/${item.shortId}`} target="_blank">
+                                    {`https://url-shortner-pr9n.onrender.com/${item.shortId}`}
                                 </a>
 
                             </td>

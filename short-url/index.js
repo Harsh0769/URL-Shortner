@@ -10,7 +10,7 @@ import connectToMongoDB from "../short-url/connect.js";
 import urlRoute from "../short-url/routes/url.js";
 const PORT = process.env.PORT;
 
-connectToMongoDB(process.env.MONOGO_URI ||  "mongodb://localhost:27017/short-url")
+connectToMongoDB(process.env.MONGO_URI)
     .then(() => { console.log("Connected to MongoDB") })
     .catch((err) => { console.error("Failed to connect to MongoDB", err) });
 
