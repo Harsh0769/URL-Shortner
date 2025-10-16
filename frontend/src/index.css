@@ -57,6 +57,7 @@ button:hover {
   font-size: 16px;
   background-color: white;
   color: black;
+  border-radius: 15px;
 }
 
 .gen-btn :hover{
@@ -129,17 +130,19 @@ button:hover {
   }
 
     .gen-btn{
-      margin: 15px;
+      margin: 20px;
+      font-weight: bold;
+      border-radius: 15px;
     }
 
   tr {
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     background: #ffffff;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-    margin-left: 25px;
-    margin-right: 25px;
+    /* margin-left: 25px;
+    margin-right: 25px; */
   }
 
   td {
