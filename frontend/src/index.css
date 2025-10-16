@@ -32,7 +32,7 @@ button {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   padding: 8px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: solid 2px rgb(0, 0, 0);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -57,7 +57,7 @@ button:hover {
   font-size: 16px;
   background-color: white;
   color: black;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .gen-btn :hover{
@@ -102,7 +102,7 @@ button:hover {
 .url-input{
   width : "300px";
   background-color: white;
-  border-radius:5px ;
+  border-radius:10px ;
   border: none;
   color: black;
   padding: 10px 50px;
@@ -131,7 +131,7 @@ button:hover {
     .gen-btn{
       margin: 20px;
       font-weight: bold;
-      border-radius: 15px;
+      border-radius: 10px;
     }
 
   tr {
