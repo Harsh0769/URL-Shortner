@@ -14,6 +14,7 @@ router.get("/", async (req, res) => {
     }
 });
 
+
 router.post("/", handleGenerateNewShortUrl)
 
 router.get("/:shortId" , handleShortId)

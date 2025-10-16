@@ -24,9 +24,14 @@ app.use("/url", urlRoute);
 app.get("/:shortId", urlRoute);
 
 app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
 app.get("*" , (_, res) => {
     res.sendFile(path.resolve(__dirname, "frontend" , "dist" ,"index.html"));
 });
+
+app.get("/health", (req, res) => {
+    res.status(200).json({ status: "ok" });
+})
 
 
 app.listen(PORT , () => {
