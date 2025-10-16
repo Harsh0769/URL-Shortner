@@ -116,12 +116,12 @@ button:hover {
   tbody,
   th{
     display: block;
-    width: 90%;
-    height: 90%;
-    display:grid;
+    width: 95%;
+    height: 95%;
+    display: grid;
     align-items: center;
     justify-content: center;
-    margin: 20px;
+    margin: 10px;
   }
 
   thead {
