@@ -1,4 +1,4 @@
-# 🔗 URL Shortener Web Application ([MERN Stack](https://url-shortner-pr9n.onrender.com)
+# 🔗 URL Shortener Web Application ([Link](https://url-shortner-pr9n.onrender.com))
 
 This is a URL Shortener Web Application built using the MERN Stack (MongoDB, Express.js, React.js, Node.js).
 
