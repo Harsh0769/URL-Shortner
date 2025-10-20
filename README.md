@@ -43,7 +43,3 @@ API Testing – POSTMAN
 # 🌐 Deployment
 
 Both Frontend & Backend are deployed on Render, making the project fully accessible online.
-
-First access timestamp
-
-Total number of clicks
